@@ -29,7 +29,7 @@ namespace Triangles.ViewModels.Windows.MainWindow.MainWindowMenuViewModel
         private readonly Command _openAboutWindowCommand;                    // - команда открытия окна "О программе"
         //private readonly AsyncCommand _openAuthorCollectionCommand;          // - команда для получения коллекции Авторов
         //private readonly Command _throwExceptionCommand;                     // - команда имитации исключительной ситуации
-        private readonly AsyncCommand _openFileCommand;                     // - команда открытия файла
+        private readonly Command _openFileCommand;                     // - команда открытия файла
 
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Triangles.ViewModels.Windows.MainWindow.MainWindowMenuViewModel
             _openAboutWindowCommand = new Command(OpenAboutWindow);
             //_openAuthorCollectionCommand = new AsyncCommand(OpenAuthorCollectionAsync);
             //_throwExceptionCommand = new Command(() => throw new Exception("Test exception"));
-            _openFileCommand = new AsyncCommand(OpenFileAsync);
+            _openFileCommand = new Command(OpenFileAsync);
         }
 
 
@@ -113,7 +113,7 @@ namespace Triangles.ViewModels.Windows.MainWindow.MainWindowMenuViewModel
         /// </summary>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        private async Task OpenFileAsync()
+        private void OpenFileAsync()
         {
             _userDialog.OpenFile(
                 strings.SelectTrianglesCoordsFile,
