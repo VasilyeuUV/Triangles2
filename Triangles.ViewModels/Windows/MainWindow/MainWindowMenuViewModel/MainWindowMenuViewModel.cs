@@ -1,6 +1,8 @@
 ﻿using System.Windows.Input;
 using Triangles.Contracts.Factories;
+using Triangles.Contracts.Services.UserDialogService;
 using Triangles.ViewModels.Commands;
+using Triangles.ViewModels.Properties;
 using Triangles.ViewModels.Windows.AboutWindow;
 
 namespace Triangles.ViewModels.Windows.MainWindow.MainWindowMenuViewModel
@@ -10,10 +12,13 @@ namespace Triangles.ViewModels.Windows.MainWindow.MainWindowMenuViewModel
     /// </summary>
     public class MainWindowMenuViewModel : IMainWindowMenuViewModel
     {
-        private readonly IWindowManager _windowManager;                                             // - менеджер окон
+        private readonly IWindowManager _windowManager;
 
         // - вьюмодели
-        private IAboutWindowViewModel? _aboutWindowViewModel;                                       // - вьюмодель окна "О программе"
+        private IAboutWindowViewModel? _aboutWindowViewModel;
+
+        // - сервисы
+        private readonly IUserDialogService _userDialog;
 
         // - фабрики
         private readonly IFactory<IAboutWindowViewModel> _aboutWindowViewModelFactory;              // - фабрика для вьюмодели окна "О программе"
@@ -23,7 +28,8 @@ namespace Triangles.ViewModels.Windows.MainWindow.MainWindowMenuViewModel
         private readonly Command _closeMainWindowCommand;                    // - команда закрытия главного окна
         private readonly Command _openAboutWindowCommand;                    // - команда открытия окна "О программе"
         //private readonly AsyncCommand _openAuthorCollectionCommand;          // - команда для получения коллекции Авторов
-        private readonly Command _throwExceptionCommand;                     // - команда имитации исключительной ситуации
+        //private readonly Command _throwExceptionCommand;                     // - команда имитации исключительной ситуации
+        private readonly AsyncCommand _openFileCommand;                     // - команда открытия файла
 
 
         /// <summary>
@@ -31,18 +37,21 @@ namespace Triangles.ViewModels.Windows.MainWindow.MainWindowMenuViewModel
         /// </summary>
         public MainWindowMenuViewModel(
             IWindowManager windowManager,
-            IFactory<IAboutWindowViewModel> aboutWindowViewModelFactory
+            IFactory<IAboutWindowViewModel> aboutWindowViewModelFactory,
+            IUserDialogService userDialog
             //IFactory<IAuthorCollectionViewModel> authorCollectionViewModelFactory
             )
         {
             this._windowManager = windowManager;
             this._aboutWindowViewModelFactory = aboutWindowViewModelFactory;
+            this._userDialog = userDialog;
             //this._authorCollectionViewModelFactory = authorCollectionViewModelFactory;
 
             _closeMainWindowCommand = new Command(CloseMainWindow);
             _openAboutWindowCommand = new Command(OpenAboutWindow);
             //_openAuthorCollectionCommand = new AsyncCommand(OpenAuthorCollectionAsync);
-            _throwExceptionCommand = new Command(() => throw new Exception("Test exception"));
+            //_throwExceptionCommand = new Command(() => throw new Exception("Test exception"));
+            _openFileCommand = new AsyncCommand(OpenFileAsync);
         }
 
 
@@ -99,6 +108,21 @@ namespace Triangles.ViewModels.Windows.MainWindow.MainWindowMenuViewModel
         }
 
 
+        /// <summary>
+        /// Открытие файла
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        private async Task OpenFileAsync()
+        {
+            _userDialog.OpenFile(
+                strings.SelectTrianglesCoordsFile,
+                out string? filePath,
+                "Text files (*.txt) | *.txt"
+                );
+        }
+
+
         ///// <summary>
         ///// Получение списка авторов книг
         ///// </summary>
@@ -122,7 +146,8 @@ namespace Triangles.ViewModels.Windows.MainWindow.MainWindowMenuViewModel
         public ICommand CloseMainWindowCommand => _closeMainWindowCommand;
         public ICommand OpenAboutWindowCommand => _openAboutWindowCommand;
         //public ICommand OpenAuthorCollectionCommand => _openAuthorCollectionCommand;
-        public ICommand ThrowExceptionCommand => _throwExceptionCommand;
+        //public ICommand ThrowExceptionCommand => _throwExceptionCommand;
+        public ICommand OpenFileCommand => _openFileCommand;
 
         public void CloseAboutWindow()
         {

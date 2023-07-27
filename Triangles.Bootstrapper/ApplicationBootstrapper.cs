@@ -1,7 +1,9 @@
 ﻿using Autofac;
 using Triangles.Bootstrapper.Logging;
 using Triangles.Bootstrapper.Services.PathService;
+using Triangles.Bootstrapper.Services.UserDialogService;
 using Triangles.Contracts.Services.PathService;
+using Triangles.Contracts.Services.UserDialogService;
 
 namespace Triangles.Bootstrapper
 {
@@ -53,6 +55,7 @@ namespace Triangles.Bootstrapper
         {
             containerBuilder.RegisterType<Application>().As<IApplication>().SingleInstance();
             containerBuilder.RegisterType<PathService>().As<IPathService>().As<IPathServiceInitializer>().SingleInstance();
+            containerBuilder.RegisterType<UserDialogService>().As<IUserDialogService>().As<IUserDialogServiceInitializer>().SingleInstance();
             containerBuilder.RegisterType<UnhandledExceptionHandler>().As<IUnhandledExceptionHandler>().SingleInstance();       // - для системы логгирования
             containerBuilder.RegisterType<LogManagerInitializer>().As<ILogManagerInitializer>().SingleInstance();               // - система логгирования
         }
@@ -64,6 +67,7 @@ namespace Triangles.Bootstrapper
         private void InitializeDependencies()
         {
             _container.Resolve<IPathServiceInitializer>().Initialize();                 // - инициализация сервиса PathService
+            _container.Resolve<IUserDialogServiceInitializer>().Initialize();           // - инициализация сервиса UserDialogService
             _container.Resolve<ILogManagerInitializer>();                               // - инициализация Логгера
         }
 

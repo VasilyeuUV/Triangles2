@@ -30,7 +30,12 @@ namespace Triangles.Bootstrapper.Services.PathService
 
         public string ApplicationFolder
         {
-            get => _applicationFolder;
+            get
+            {
+                EnshureInitialized();
+                return _applicationFolder;
+            }
+
             private set => _applicationFolder = value;
         }
 

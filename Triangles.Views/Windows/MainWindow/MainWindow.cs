@@ -33,6 +33,12 @@ namespace Triangles.Views.Windows.MainWindow
                 "MenuViewModel.CloseMainWindowCommand",
                 true
                 );
+            this.menuItemLoad.DataBindings.Add(
+                nameof(this.menuItemLoad.Command),
+                this.DataContext,
+                "MenuViewModel.OpenFileCommand",
+                true
+                );
             this.menuItemTechTask.DataBindings.Add(
                 nameof(this.menuItemTechTask.Command),
                 this.DataContext,

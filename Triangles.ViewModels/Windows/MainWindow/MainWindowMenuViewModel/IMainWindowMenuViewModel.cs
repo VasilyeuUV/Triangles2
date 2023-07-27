@@ -35,9 +35,9 @@ namespace Triangles.ViewModels.Windows.MainWindow.MainWindowMenuViewModel
         //ICommand OpenAuthorCollectionCommand { get; }
 
         /// <summary>
-        /// Команда для вызова исключительной ситуации (для тестирования)
+        /// Команда Открытие файла
         /// </summary>
-        ICommand ThrowExceptionCommand { get; }
+        ICommand OpenFileCommand { get; }
 
 
         /// <summary>

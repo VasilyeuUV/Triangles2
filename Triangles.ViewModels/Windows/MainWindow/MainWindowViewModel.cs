@@ -69,11 +69,7 @@ namespace Triangles.ViewModels.Windows.MainWindow
         public IMainWindowContentViewModel? ContentViewModel
         {
             get => _contentViewModel;
-            private set
-            {
-                _contentViewModel = value;
-                InvokePropertyChanged();
-            }
+            private set => Set(ref _contentViewModel, value);
         }
 
 
