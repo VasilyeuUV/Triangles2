@@ -8,6 +8,12 @@
         /// <summary>
         /// Путь к каталогу приложения для сохранения настроек (для потребителя)
         /// </summary>
+        string ApplicationSettingsFolder { get; }
+
+
+        /// <summary>
+        /// Путь к каталогу, где лежит исполняемый файл
+        /// </summary>
         string ApplicationFolder { get; }
     }
 }

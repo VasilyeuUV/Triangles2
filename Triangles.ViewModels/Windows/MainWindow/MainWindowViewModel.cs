@@ -38,6 +38,9 @@ namespace Triangles.ViewModels.Windows.MainWindow
         //############################################################################################################
         #region AWindowViewModelBase
 
+        public override string Title => strings.MainFormTitle;
+
+
         public override void WindowClosing()
         {
             base.WindowClosing();
@@ -46,12 +49,6 @@ namespace Triangles.ViewModels.Windows.MainWindow
         }
 
         #endregion // AWindowViewModelBase
-
-
-        /// <summary>
-        /// Заголовок окна
-        /// </summary>
-        public string Title => strings.MainFormTitle;
 
 
         /// <summary>
@@ -78,6 +75,7 @@ namespace Triangles.ViewModels.Windows.MainWindow
                 InvokePropertyChanged();
             }
         }
+
 
 
         //############################################################################################################

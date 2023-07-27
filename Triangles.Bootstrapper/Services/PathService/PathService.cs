@@ -1,4 +1,5 @@
-﻿using Triangles.Contracts.Services.PathService;
+﻿using System.Reflection;
+using Triangles.Contracts.Services.PathService;
 
 namespace Triangles.Bootstrapper.Services.PathService
 {
@@ -7,23 +8,32 @@ namespace Triangles.Bootstrapper.Services.PathService
     /// </summary>
     internal class PathService : IPathService, IPathServiceInitializer
     {
-        private bool _isInitialized;                        // - флаг, что Wrapper был инициализирован (false /отсутствие инициализации/ по умолчанию)
-        private string _applicationFolder = string.Empty;   // - путь к каталогу приложения для сохранения настроек
+        private bool _isInitialized;                                    // - флаг, что Wrapper был инициализирован (false /отсутствие инициализации/ по умолчанию)
+        private string _applicationSettingsFolder = string.Empty;       // - путь к каталогу приложения для сохранения настроек
+        private string _applicationFolder = string.Empty;               // - путь к каталогу приложения
 
 
         //############################################################################################################
         #region IPathService
 
 
-        public string ApplicationFolder
+        public string ApplicationSettingsFolder
         {
             get
             {
                 EnshureInitialized();
-                return _applicationFolder;
+                return _applicationSettingsFolder;
             }
+            private set => _applicationSettingsFolder = value;
+        }
+
+
+        public string ApplicationFolder
+        {
+            get => _applicationFolder;
             private set => _applicationFolder = value;
         }
+
 
         #endregion // IPathService
 
@@ -48,7 +58,10 @@ namespace Triangles.Bootstrapper.Services.PathService
             const string applicationName = "DevTricks App";
 
             // - формируем путь к папке настроек Приложения (именно через Path, т.к. учитывает слэши)
-            ApplicationFolder = Path.Combine(localApplicationDataPath, company, applicationName);
+            ApplicationSettingsFolder = Path.Combine(localApplicationDataPath, company, applicationName);
+
+            ApplicationFolder = Environment.CurrentDirectory;
+                //Path.GetFullPath(Assembly.GetExecutingAssembly().Location); 
         }
 
         #endregion // IPathServiceInitializer

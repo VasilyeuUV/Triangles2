@@ -9,7 +9,12 @@
 		
 	  		<UseWindowsForms>true</UseWindowsForms>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<ApplicationIcon>axxonsoft-logo.ico</ApplicationIcon>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Include="axxonsoft-logo.ico" />
+	</ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="7.0.1" />

@@ -51,7 +51,7 @@ namespace Triangles.Bootstrapper.Logging
             // - файловый таргет, отвечает за запись логов в файл
             var appLogFileTarget = new FileTarget()
             {
-                FileName = Path.Combine(_pathService.ApplicationFolder, "Logs", "app.log")      // - путь к файлу
+                FileName = Path.Combine(_pathService.ApplicationSettingsFolder, "Logs", "app.log")      // - путь к файлу
             };
 
             // - асинхронный target, позволяет накапливать и асинхронно записывать пакет логов

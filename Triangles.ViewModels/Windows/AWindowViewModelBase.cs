@@ -78,6 +78,8 @@ namespace Triangles.ViewModels.Windows
         //############################################################################################################
         #region IWindowViewModel
 
+        public abstract string Title { get; }
+
 
         public virtual void WindowClosing()
         {

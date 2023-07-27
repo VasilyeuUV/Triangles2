@@ -136,7 +136,7 @@ namespace Triangles.Infrastructure.Settings
 
             const string settingsFolderName = "Settings";
 
-            var settingsPath = Path.Combine(_pathService.ApplicationFolder, settingsFolderName);
+            var settingsPath = Path.Combine(_pathService.ApplicationSettingsFolder, settingsFolderName);
             _settingsFilePath = Path.Combine(settingsPath, $"{MementoName}.json");
 
             Directory.CreateDirectory(settingsPath);

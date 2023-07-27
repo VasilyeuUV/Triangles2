@@ -22,14 +22,14 @@ namespace Triangles.ViewModels.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class strings {
+    internal class resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal strings() {
+        internal resources() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Triangles.ViewModels.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Triangles.ViewModels.Properties.strings", typeof(strings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Triangles.ViewModels.Properties.resources", typeof(resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,65 +61,12 @@ namespace Triangles.ViewModels.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Техническое задание.
+        ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static string AboutFormTitle {
+        internal static byte[] AxxonSoft_C__task_triangles {
             get {
-                return ResourceManager.GetString("AboutFormTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка открытия файла.
-        /// </summary>
-        internal static string ErrMsgOpenFileTitle {
-            get {
-                return ResourceManager.GetString("ErrMsgOpenFileTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка.
-        /// </summary>
-        internal static string ErrMsgTitle {
-            get {
-                return ResourceManager.GetString("ErrMsgTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на ERROR.
-        /// </summary>
-        internal static string Error {
-            get {
-                return ResourceManager.GetString("Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Некорректные входные данные.
-        /// </summary>
-        internal static string InvalidInputData {
-            get {
-                return ResourceManager.GetString("InvalidInputData", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на U.Vasilyeu AxxonSoft test task.
-        /// </summary>
-        internal static string MainFormTitle {
-            get {
-                return ResourceManager.GetString("MainFormTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Выберите файл с координатами треугольников.
-        /// </summary>
-        internal static string SelectTrianglesCoordsFile {
-            get {
-                return ResourceManager.GetString("SelectTrianglesCoordsFile", resourceCulture);
+                object obj = ResourceManager.GetObject("AxxonSoft_C__task_triangles", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }
