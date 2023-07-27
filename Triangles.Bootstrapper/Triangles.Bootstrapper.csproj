@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<WarningsAsErrors>Nullable</WarningsAsErrors>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Autofac" Version="7.0.1" />
+	  <PackageReference Include="NLog" Version="5.2.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Triangles.Infrastructure\Triangles.Infrastructure.csproj" />
+	  <ProjectReference Include="..\Triangles.ViewModels\Triangles.ViewModels.csproj" />
+	  <ProjectReference Include="..\Triangles.Views\Triangles.Views.csproj" />
+	</ItemGroup>
+
+</Project>
