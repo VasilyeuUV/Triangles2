@@ -1,5 +1,6 @@
 ﻿using Triangles.ViewModels.Windows;
 using Triangles.ViewModels.Windows.MainWindow;
+using Triangles.Views.Properties;
 
 namespace Triangles.Views.Windows.MainWindow
 {
@@ -16,6 +17,25 @@ namespace Triangles.Views.Windows.MainWindow
                 nameof(this.Text),
                 this.DataContext,
                 "Title"
+                );
+
+            // - меню
+            this.menuItemFile.Text = strings.MenuItemFile;
+            this.menuItemClose.Text = strings.MenuItemClose;
+            this.menuItemAbout.Text = strings.MenuItemAbout;
+            this.menuItemTechTask.Text = strings.MenuItemTechTask;
+
+            this.menuItemClose.DataBindings.Add(
+                nameof(this.menuItemClose.Command),
+                this.DataContext,
+                "MenuViewModel.CloseMainWindowCommand",
+                true
+                );
+            this.menuItemTechTask.DataBindings.Add(
+                nameof(this.menuItemClose.Command),
+                this.DataContext,
+                "MenuViewModel.OpenAboutWindowCommand",
+                true
                 );
         }
 

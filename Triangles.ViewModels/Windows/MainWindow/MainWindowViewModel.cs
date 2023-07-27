@@ -53,15 +53,18 @@ namespace Triangles.ViewModels.Windows.MainWindow
         /// </summary>
         public string Title => strings.MainFormTitle;
 
+
         /// <summary>
         /// Вьюмодель меню главного окна
         /// </summary>
         public IMainWindowMenuViewModel MenuViewModel { get; }
 
+
         /// <summary>
         /// Вьюмодель строки состояния главного окна
         /// </summary>
         //public IMainWindowStatusBarViewModel StatusBarViewModel { get; }
+
 
         /// <summary>
         /// Вьюмодель контента главного окна

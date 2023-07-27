@@ -33,8 +33,8 @@
             menuItemLoad = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
             menuItemClose = new ToolStripMenuItem();
-            оПрограммеToolStripMenuItem = new ToolStripMenuItem();
-            тЗToolStripMenuItem = new ToolStripMenuItem();
+            menuItemAbout = new ToolStripMenuItem();
+            menuItemTechTask = new ToolStripMenuItem();
             panelMessage = new Panel();
             lblMessage = new Label();
             pictureBoxMain = new PictureBox();
@@ -46,7 +46,7 @@
             // mainMenu
             // 
             mainMenu.ImageScalingSize = new Size(24, 24);
-            mainMenu.Items.AddRange(new ToolStripItem[] { menuItemFile, оПрограммеToolStripMenuItem });
+            mainMenu.Items.AddRange(new ToolStripItem[] { menuItemFile, menuItemAbout });
             mainMenu.Location = new Point(0, 0);
             mainMenu.Name = "mainMenu";
             mainMenu.Size = new Size(800, 33);
@@ -57,38 +57,38 @@
             // 
             menuItemFile.DropDownItems.AddRange(new ToolStripItem[] { menuItemLoad, toolStripMenuItem1, menuItemClose });
             menuItemFile.Name = "menuItemFile";
-            menuItemFile.Size = new Size(69, 29);
-            menuItemFile.Text = "Файл";
+            menuItemFile.Size = new Size(54, 29);
+            menuItemFile.Text = "File";
             // 
             // menuItemLoad
             // 
             menuItemLoad.Name = "menuItemLoad";
-            menuItemLoad.Size = new Size(194, 34);
-            menuItemLoad.Text = "Загрузить";
+            menuItemLoad.Size = new Size(254, 34);
+            menuItemLoad.Text = "Load Coordinates";
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(191, 6);
+            toolStripMenuItem1.Size = new Size(251, 6);
             // 
             // menuItemClose
             // 
             menuItemClose.Name = "menuItemClose";
-            menuItemClose.Size = new Size(194, 34);
-            menuItemClose.Text = "Закрыть";
+            menuItemClose.Size = new Size(254, 34);
+            menuItemClose.Text = "Exit";
             // 
-            // оПрограммеToolStripMenuItem
+            // menuItemAbout
             // 
-            оПрограммеToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { тЗToolStripMenuItem });
-            оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            оПрограммеToolStripMenuItem.Size = new Size(141, 29);
-            оПрограммеToolStripMenuItem.Text = "О программе";
+            menuItemAbout.DropDownItems.AddRange(new ToolStripItem[] { menuItemTechTask });
+            menuItemAbout.Name = "menuItemAbout";
+            menuItemAbout.Size = new Size(78, 29);
+            menuItemAbout.Text = "About";
             // 
-            // тЗToolStripMenuItem
+            // menuItemTechTask
             // 
-            тЗToolStripMenuItem.Name = "тЗToolStripMenuItem";
-            тЗToolStripMenuItem.Size = new Size(270, 34);
-            тЗToolStripMenuItem.Text = "ТЗ";
+            menuItemTechTask.Name = "menuItemTechTask";
+            menuItemTechTask.Size = new Size(220, 34);
+            menuItemTechTask.Text = "Technical task";
             // 
             // panelMessage
             // 
@@ -148,8 +148,8 @@
         private ToolStripMenuItem menuItemLoad;
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem menuItemClose;
-        private ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private ToolStripMenuItem тЗToolStripMenuItem;
+        private ToolStripMenuItem menuItemAbout;
+        private ToolStripMenuItem menuItemTechTask;
         private Panel panelMessage;
         private Label lblMessage;
         private PictureBox pictureBoxMain;
