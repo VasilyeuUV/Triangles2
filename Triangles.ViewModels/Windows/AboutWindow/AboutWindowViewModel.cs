@@ -26,5 +26,7 @@ namespace Triangles.ViewModels.Windows.AboutWindow
         ///// Версия приложения
         ///// </summary>
         //public string Version { get; }
+
+        public string TechTaskFilePath => 
     }
 }

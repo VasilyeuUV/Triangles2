@@ -3,19 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangles", "Triangles\Triangles.csproj", "{4832A27B-DBAC-45CB-8C8E-7451871FD80A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Triangles", "Triangles\Triangles.csproj", "{4832A27B-DBAC-45CB-8C8E-7451871FD80A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangles.Bootstrapper", "Triangles.Bootstrapper\Triangles.Bootstrapper.csproj", "{1F7423F2-96AA-41DE-992D-3F624EF19787}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Triangles.Bootstrapper", "Triangles.Bootstrapper\Triangles.Bootstrapper.csproj", "{1F7423F2-96AA-41DE-992D-3F624EF19787}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangles.ViewModels", "Triangles.ViewModels\Triangles.ViewModels.csproj", "{65B0D43D-1F93-4754-9033-AE1A6D4436D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Triangles.ViewModels", "Triangles.ViewModels\Triangles.ViewModels.csproj", "{65B0D43D-1F93-4754-9033-AE1A6D4436D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangles.Views", "Triangles.Views\Triangles.Views.csproj", "{A3582EE6-3F00-4FDC-9A95-2C0B05B72BEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Triangles.Views", "Triangles.Views\Triangles.Views.csproj", "{A3582EE6-3F00-4FDC-9A95-2C0B05B72BEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangles.Contracts", "Triangles.Contracts\Triangles.Contracts.csproj", "{4594BE9D-D229-4C5A-9437-4C6163AAE073}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Triangles.Contracts", "Triangles.Contracts\Triangles.Contracts.csproj", "{4594BE9D-D229-4C5A-9437-4C6163AAE073}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangles.Models", "Triangles.Models\Triangles.Models.csproj", "{7B244230-F94B-4763-B035-31844ADF7BEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Triangles.Models", "Triangles.Models\Triangles.Models.csproj", "{7B244230-F94B-4763-B035-31844ADF7BEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangles.Infrastructure", "Triangles.Infrastructure\Triangles.Infrastructure.csproj", "{FAA792A8-ED90-4E2A-9E70-FB9FDD42F355}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Triangles.Infrastructure", "Triangles.Infrastructure\Triangles.Infrastructure.csproj", "{FAA792A8-ED90-4E2A-9E70-FB9FDD42F355}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{89AF6A9C-AB7F-40D4-BB52-A5C69C6C260D}"
+	ProjectSection(SolutionItems) = preProject
+		Files\AxxonSoft_C#_task_triangles.pdf = Files\AxxonSoft_C#_task_triangles.pdf
+		Files\triangles.txt = Files\triangles.txt
+		Files\triangles1.txt = Files\triangles1.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

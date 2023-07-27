@@ -8,7 +8,7 @@ namespace Triangles.Views.Windows.AboutWindow
         public AboutWindow(IAboutWindowViewModel aboutWindowViewModel)
         {
             InitializeComponent();
-            
+
             this.DataContext = aboutWindowViewModel;
         }
 
