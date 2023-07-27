@@ -4,26 +4,25 @@
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net7.0-windows</TargetFramework>
 		<Nullable>enable</Nullable>
-	  	<WarningsAsErrors>Nullable</WarningsAsErrors>
-	  <WarningsAsErrors>Nullable</WarningsAsErrors>
-		
-	  		<UseWindowsForms>true</UseWindowsForms>
+		<WarningsAsErrors>Nullable</WarningsAsErrors>
+		<UseWindowsForms>true</UseWindowsForms>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<ApplicationIcon>axxonsoft-logo.ico</ApplicationIcon>
+		<EnablePreviewFeatures>true</EnablePreviewFeatures>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Include="axxonsoft-logo.ico" />
+		<Content Include="axxonsoft-logo.ico" />
 	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Autofac" Version="7.0.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="NLog" Version="5.2.2" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Autofac" Version="7.0.1" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="NLog" Version="5.2.2" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Triangles.Bootstrapper\Triangles.Bootstrapper.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Triangles.Bootstrapper\Triangles.Bootstrapper.csproj" />
+	</ItemGroup>
 
 </Project>
