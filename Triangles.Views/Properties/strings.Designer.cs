@@ -88,6 +88,15 @@ namespace Triangles.Views.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Загрузить.
+        /// </summary>
+        internal static string MenuItemLoad {
+            get {
+                return ResourceManager.GetString("MenuItemLoad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Техническое задание.
         /// </summary>
         internal static string MenuItemTechTask {

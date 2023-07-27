@@ -126,6 +126,9 @@
   <data name="MenuItemFile" xml:space="preserve">
     <value>Файл</value>
   </data>
+  <data name="MenuItemLoad" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
   <data name="MenuItemTechTask" xml:space="preserve">
     <value>Техническое задание</value>
   </data>

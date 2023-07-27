@@ -10,8 +10,7 @@ namespace Triangles.Views.Windows.MainWindow
         {
             InitializeComponent();
 
-            // Переданная вьюмодель является контекстом данных для окна.
-            DataContext = mainWindowViewModel;
+            this.DataContext = mainWindowViewModel;
 
             this.DataBindings.Add(
                 nameof(this.Text),
@@ -19,8 +18,11 @@ namespace Triangles.Views.Windows.MainWindow
                 "Title"
                 );
 
+            this.lblMessage.Text = string.Empty;
+
             // - меню
             this.menuItemFile.Text = strings.MenuItemFile;
+            this.menuItemLoad.Text = strings.MenuItemLoad;
             this.menuItemClose.Text = strings.MenuItemClose;
             this.menuItemAbout.Text = strings.MenuItemAbout;
             this.menuItemTechTask.Text = strings.MenuItemTechTask;
@@ -32,7 +34,7 @@ namespace Triangles.Views.Windows.MainWindow
                 true
                 );
             this.menuItemTechTask.DataBindings.Add(
-                nameof(this.menuItemClose.Command),
+                nameof(this.menuItemTechTask.Command),
                 this.DataContext,
                 "MenuViewModel.OpenAboutWindowCommand",
                 true
