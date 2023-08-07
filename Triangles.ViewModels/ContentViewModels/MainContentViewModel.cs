@@ -9,7 +9,7 @@ namespace Triangles.ViewModels.ContentViewModels
         private readonly IUserDialogService _userDialog;
 
         private string? _nestingLevelMax;
-        private Bitmap _bitmap = new(Const.COORD_Y_MAXVALUE, Const.COORD_X_MAXVALUE);
+        private Bitmap _bitmap = new(Const.HEIGHT_MAXVALUE, Const.WEIDT_MAXVALUE);
         //private AllowedColors? _allowedColors;
 
         /// <summary>
@@ -45,9 +45,9 @@ namespace Triangles.ViewModels.ContentViewModels
         //#########################################################################################################
         #region IMainContentViewModel
 
-        public Task InitializeAsync()
+        public async Task InitializeAsync()
         {
-            throw new NotImplementedException();
+            var triangles = 0;
         }
 
         #endregion // IMainContentViewModel

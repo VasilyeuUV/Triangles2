@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Triangles.ViewModels.ContentViewModels.Triangles;
 using Triangles.ViewModels.Extensions;
 using Triangles.ViewModels.Windows.AboutWindow;
 using Triangles.ViewModels.Windows.MainWindow;
@@ -22,9 +23,10 @@ namespace Triangles.ViewModels
             builder.RegisterViewModel<AboutWindowViewModel, IAboutWindowViewModel>();
 
             // - регистрация вьюмоделей главного окна
-            //builder.RegisterViewModel<AuthorCollectionViewModel, IAuthorCollectionViewModel>();             // - контент главного окна
-            builder.RegisterViewModel<MainWindowMenuViewModel, IMainWindowMenuViewModel>();                 // - меню главного окна
-            //builder.RegisterViewModel<MainWindowStatusBarViewModel, IMainWindowStatusBarViewModel>();       // - строка состояния главного окна
+            //builder.RegisterViewModel<AuthorCollectionViewModel, IAuthorCollectionViewModel>();               // - контент главного окна
+            builder.RegisterViewModel<TriangleCollectionViewModel, ITriangleCollectionViewModel>();             // - контент с треугольниками
+            builder.RegisterViewModel<MainWindowMenuViewModel, IMainWindowMenuViewModel>();                     // - меню главного окна
+            //builder.RegisterViewModel<MainWindowStatusBarViewModel, IMainWindowStatusBarViewModel>();          // - строка состояния главного окна
 
         }
     }

@@ -5,7 +5,7 @@ namespace Geometry.Contracts
     /// <summary>
     /// Контракт объекта, имеющего площадь
     /// </summary>
-    internal interface ISquareable : ILineable
+    internal interface ISquareable : ILinear
     {
         /// <summary>
         /// Площадь фигуры
@@ -16,6 +16,6 @@ namespace Geometry.Contracts
         /// <summary>
         /// Цвет заливки фигуры
         /// </summary>
-        Color? FillColor { get; }
+        Color FillColor { get; }
     }
 }

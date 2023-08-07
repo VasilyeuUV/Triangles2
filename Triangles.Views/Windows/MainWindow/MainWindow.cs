@@ -1,4 +1,5 @@
-﻿using Triangles.ViewModels.Windows;
+﻿using System.Data.Common;
+using Triangles.ViewModels.Windows;
 using Triangles.ViewModels.Windows.MainWindow;
 using Triangles.Views.Properties;
 
@@ -45,6 +46,35 @@ namespace Triangles.Views.Windows.MainWindow
                 "MenuViewModel.OpenAboutWindowCommand",
                 true
                 );
+
+            // - контент
+            this.lblMessage.DataBindings.Add(
+                new Binding(
+                    nameof(this.lblMessage.Text),
+                    this.DataContext,
+                    "ContentViewModel.NestingLevelMax",
+                    false,
+                    DataSourceUpdateMode.OnPropertyChanged
+                    )
+                );
+            //this.pictureBoxMain.DataBindings.Add(
+            //    new Binding(
+            //        nameof(this.pictureBoxMain.BackColor),
+            //        this.DataContext,
+            //         "ContentViewModel.TriangleColors.LightestColor",
+            //        false,
+            //        DataSourceUpdateMode.OnPropertyChanged
+            //        )
+            //    );
+            //this.pictureBoxMain.DataBindings.Add(
+            //    new Binding(
+            //        nameof(this.pictureBoxMain.Image),
+            //        this.DataContext,
+            //         "ContentViewModel.Bitmap",
+            //        false,
+            //        DataSourceUpdateMode.OnPropertyChanged
+            //        )
+            //    );
         }
 
 

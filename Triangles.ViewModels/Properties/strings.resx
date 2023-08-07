@@ -120,6 +120,12 @@
   <data name="AboutFormTitle" xml:space="preserve">
     <value>Техническое задание</value>
   </data>
+  <data name="CommonMatrixIsNull" xml:space="preserve">
+    <value>Не удалось сформировать общую матрицу изображения</value>
+  </data>
+  <data name="ErrMsgInvalidData" xml:space="preserve">
+    <value>Некорректные данные</value>
+  </data>
   <data name="ErrMsgOpenFileTitle" xml:space="preserve">
     <value>Ошибка открытия файла</value>
   </data>
@@ -128,6 +134,9 @@
   </data>
   <data name="Error" xml:space="preserve">
     <value>ERROR</value>
+  </data>
+  <data name="FileNotFound" xml:space="preserve">
+    <value>Файл не найден</value>
   </data>
   <data name="InvalidInputData" xml:space="preserve">
     <value>Некорректные входные данные</value>

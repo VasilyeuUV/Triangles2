@@ -18,6 +18,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\Colors\Colors.csproj" />
 		<ProjectReference Include="..\Triangles.Models\Triangles.Models.csproj" />
 		<ProjectReference Include="..\Triangles.Contracts\Triangles.Contracts.csproj" />
 	</ItemGroup>

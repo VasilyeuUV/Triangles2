@@ -14,11 +14,11 @@
         /// <summary>
         /// Максимальное значение по координате X
         /// </summary>
-        public const int COORD_X_MAXVALUE = 1000;
+        public const int HEIGHT_MAXVALUE = 1000;
 
         /// <summary>
         /// Максимальное значение по координате Y
         /// </summary>
-        public const int COORD_Y_MAXVALUE = 1000;
+        public const int WEIDT_MAXVALUE = 1000;
     }
 }

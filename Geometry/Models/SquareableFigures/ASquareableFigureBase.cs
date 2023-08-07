@@ -1,10 +1,9 @@
 ﻿using Geometry.Contracts;
-using System.ComponentModel.DataAnnotations;
 using System.Drawing;
 
 namespace Geometry.Models.SquareableFigures
 {
-    internal abstract class ASquareableFigureBase : AFigure2dBase, ISquareable
+    public abstract class ASquareableFigureBase : AFigure2dBase, ISquareable
     {
         private double _s;                  // - площадь фигуры
 
@@ -15,7 +14,8 @@ namespace Geometry.Models.SquareableFigures
         /// <param name="coords"></param>
         protected ASquareableFigureBase(IEnumerable<int> coords) : base(coords)
         {
-            _s = GetSquare();
+            this._s = GetSquare();
+            this.FillColor = Color.Transparent;
         }
 
 
@@ -44,7 +44,7 @@ namespace Geometry.Models.SquareableFigures
 
         public double S => _s;
 
-        public Color? FillColor { get; set; }
+        public Color FillColor { get; set; }
 
         public Color? LineColor { get; set; }
 

@@ -2,6 +2,7 @@
 using Triangles.Contracts.Factories;
 using Triangles.Contracts.Services.UserDialogService;
 using Triangles.ViewModels.Commands;
+using Triangles.ViewModels.ContentViewModels.Triangles;
 using Triangles.ViewModels.Properties;
 using Triangles.ViewModels.Windows.AboutWindow;
 
@@ -21,8 +22,9 @@ namespace Triangles.ViewModels.Windows.MainWindow.MainWindowMenuViewModel
         private readonly IUserDialogService _userDialog;
 
         // - фабрики
-        private readonly IFactory<IAboutWindowViewModel> _aboutWindowViewModelFactory;              // - фабрика для вьюмодели окна "О программе"
+        private readonly IFactory<IAboutWindowViewModel> _aboutWindowViewModelFactory;                  // - фабрика для вьюмодели окна "О программе"
         //private readonly IFactory<IAuthorCollectionViewModel> _authorCollectionViewModelFactory;    // - фабрика вьюмодели коллекции авторов
+        private readonly IFactory<ITriangleCollectionViewModel> _triangleCollectionViewModelFactory;    // - фабрика вьюмодели коллекции треугольников
 
         // - команды
         private readonly Command _closeMainWindowCommand;                    // - команда закрытия главного окна
@@ -38,7 +40,8 @@ namespace Triangles.ViewModels.Windows.MainWindow.MainWindowMenuViewModel
         public MainWindowMenuViewModel(
             IWindowManager windowManager,
             IFactory<IAboutWindowViewModel> aboutWindowViewModelFactory,
-            IUserDialogService userDialog
+            IUserDialogService userDialog,
+            IFactory<ITriangleCollectionViewModel> triangleCollectionViewModelFactory
             //IFactory<IAuthorCollectionViewModel> authorCollectionViewModelFactory
             )
         {
@@ -46,6 +49,7 @@ namespace Triangles.ViewModels.Windows.MainWindow.MainWindowMenuViewModel
             this._aboutWindowViewModelFactory = aboutWindowViewModelFactory;
             this._userDialog = userDialog;
             //this._authorCollectionViewModelFactory = authorCollectionViewModelFactory;
+            this._triangleCollectionViewModelFactory = triangleCollectionViewModelFactory;
 
             _closeMainWindowCommand = new Command(CloseMainWindow);
             _openAboutWindowCommand = new Command(OpenAboutWindow);
@@ -115,11 +119,10 @@ namespace Triangles.ViewModels.Windows.MainWindow.MainWindowMenuViewModel
         /// <exception cref="NotImplementedException"></exception>
         private async Task OpenFileAsync()
         {
-            _userDialog.OpenFile(
-                strings.SelectTrianglesCoordsFile,
-                out string? filePath,
-                "Text files (*.txt) | *.txt"
-                );
+            var triangleCollectionViewModel = _triangleCollectionViewModelFactory.Create();
+            await triangleCollectionViewModel.InitializeAsync();
+
+            ContentViewModelChanged?.Invoke(triangleCollectionViewModel);
         }
 
 

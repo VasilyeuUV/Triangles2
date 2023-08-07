@@ -8,7 +8,7 @@ namespace Geometry.Models
     /// <summary>
     /// Геометрическая фигура на плоскости
     /// </summary>
-    internal abstract class AFigure2dBase
+    public abstract class AFigure2dBase
     {
         private const int _DIMENSION = 2;                                   // - количество измерений для 2D
 
@@ -20,6 +20,10 @@ namespace Geometry.Models
         protected AFigure2dBase(IEnumerable<int> coords)
         {
             this.Coordinates = AddCoordinates(coords).ToArray();
+            if (this.Coordinates == null)
+                throw new ArgumentNullException(nameof(this.Coordinates));
+
+
             this.Mask = GetMask(this.Coordinates);
         }
 
@@ -27,13 +31,13 @@ namespace Geometry.Models
         /// <summary>
         /// Координаты геометрической фигуры на плоскости
         /// </summary>
-        public Point[]? Coordinates { get; private set; }
+        public Point[] Coordinates { get; private set; }
 
 
         /// <summary>
         /// Маска фигуры
         /// </summary>
-        public int[,]? Mask { get; set; }
+        public int[,] Mask { get; set; }
 
 
         /// <summary>
@@ -64,7 +68,7 @@ namespace Geometry.Models
 
 
 
-        private int[,]? GetMask(Point[] coordinates)
+        private int[,] GetMask(Point[] coordinates)
         {
             var maxH = (int)coordinates.Max(coord => coord.X);
             var maxW = (int)coordinates.Max(coord => coord.Y);
@@ -76,7 +80,7 @@ namespace Geometry.Models
                 g.Clear(Color.Transparent);
                 g.FillPolygon(new SolidBrush(Color.Green), coordinates);
 
-                Rectangle rect = new Rectangle(0, 0, maxH, maxW);
+                Rectangle rect = new(0, 0, maxH, maxW);
                 BitmapData bmpData = bitmap.LockBits(rect, ImageLockMode.ReadWrite, bitmap.PixelFormat);
                 IntPtr ptr = bmpData.Scan0;
                 int bytes = Math.Abs(bmpData.Stride) * bitmap.Height;

@@ -32,7 +32,7 @@
         public static T[,] ToArray2D<T>(this IEnumerable<T> items, int width)
         {
             var arr = items.Split(width).ToArray();
-            var height = arr.Length;
+            var height = arr.Length - 1;
             T[,] arr2d = new T[height, width];
 
             int h = 0, w = 0;

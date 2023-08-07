@@ -70,6 +70,24 @@ namespace Triangles.ViewModels.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось сформировать общую матрицу изображения.
+        /// </summary>
+        internal static string CommonMatrixIsNull {
+            get {
+                return ResourceManager.GetString("CommonMatrixIsNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Некорректные данные.
+        /// </summary>
+        internal static string ErrMsgInvalidData {
+            get {
+                return ResourceManager.GetString("ErrMsgInvalidData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Ошибка открытия файла.
         /// </summary>
         internal static string ErrMsgOpenFileTitle {
@@ -93,6 +111,15 @@ namespace Triangles.ViewModels.Properties {
         internal static string Error {
             get {
                 return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Файл не найден.
+        /// </summary>
+        internal static string FileNotFound {
+            get {
+                return ResourceManager.GetString("FileNotFound", resourceCulture);
             }
         }
         
